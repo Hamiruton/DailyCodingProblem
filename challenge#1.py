@@ -8,7 +8,7 @@ def method_1(array, k):
 				break
 			else:
 				pass
-		return False
+	return False
 
 
 
@@ -26,7 +26,7 @@ def method_2(array, k):
 		i += 1
 
 if __name__ == '__main__':
-	k = 17
+	k = 14
 	array = [10,15,3,7]
 	print(method_1(array, k))
 	print(method_2(array, k))
