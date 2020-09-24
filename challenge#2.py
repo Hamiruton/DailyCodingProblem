@@ -7,9 +7,22 @@ def prod(array):
 
 
 def method_1(array):
-	return [prod(array) // i for i in array]
+	product = prod(array)
+	return [product // i for i in array]
+
+def method_2(array):
+	new_array = []
+	taille = len(array)
+	for i in range(taille):
+		second_array = list(array)
+		second_array.pop(i)
+		product = prod(second_array)
+		new_array.append(product)
+	return new_array
 
 
 if __name__ == '__main__':
-	array = [1,2,3,4,5]
-	print(method_1(array))
+	test_array = [1,2,3,4,5]
+	expected_array = [120, 60, 40, 30, 24]
+	assert method_1(test_array) == expected_array
+	assert method_2(test_array) == expected_array
